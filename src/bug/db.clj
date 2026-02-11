@@ -13,8 +13,11 @@
     :db/cardinality :db.cardinality/many}])
 
 (defn start-asset-db [db-dir]
-  (let [cfg {:store {:backend :file ; backends: in-memory, file-based, LevelDB, PostgreSQL
-                     :path db-dir}
+  (let [cfg {
+             :store {:backend :file ; backends: in-memory, file-based, LevelDB, PostgreSQL
+                     :path db-dir
+                     :id (java.util.UUID/fromString "04234acd-f191-42f9-9b95-bb4d52723c76")        
+                     }
              :keep-history? false
              :schema-flexibility :write  ;default - strict value types need to be defined in advance. 
                   ;:schema-flexibility :read ; transact any  kind of data into the database you can set :schema-flexibility to read
@@ -28,12 +31,6 @@
       (d/create-database cfg))
   ; connect
     (d/connect cfg)))
-
-
-
-
-
-
 
 (defn tupelize-list [data]
   (update data :lists/asset #(into []

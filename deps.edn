@@ -3,10 +3,9 @@
  {org.clojure/clojure    {:mvn/version "1.11.3"}
   nano-id/nano-id {:mvn/version "1.1.0"}
   missionary/missionary {:mvn/version "b.46"} ; reactive framework.
-  io.replikativ/datahike {:mvn/version "0.6.1594"
-                          ;"0.7.1624"
-                          }}
-
+  ;io.replikativ/datahike {:mvn/version "0.6.1594"}
+  org.replikativ/datahike {:mvn/version "0.7.1643"} 
+  }
  :aliases
  {
   
